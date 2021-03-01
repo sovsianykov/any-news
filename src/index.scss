@@ -46,8 +46,8 @@ code {
   padding: 0;
 }
 .box-dark {
-  background: linear-gradient(blanchedalmond, #ecd6af, blanchedalmond);
-  color: #0c0905;
+  background: linear-gradient(#242222, #646363, #24211f);
+  color: blanchedalmond;
   min-height: 160px;
   margin: 0;
   padding: 15px;
@@ -58,6 +58,11 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .cardImgHolder {
+    height: 160px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
 }
 img {
   display: block;

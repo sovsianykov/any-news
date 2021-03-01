@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import Routes from './Routes';
-import "../index.css"
+import "../index.scss"
 
 class MyAppNavbar extends Component {
 
