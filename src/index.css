@@ -1,5 +1,9 @@
 body {
   margin: 0;
+  padding: 0;
+  background: linear-gradient(blanchedalmond, #ecd6af, blanchedalmond);
+
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +14,72 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.grad {
+  background: linear-gradient(#212020, #101011, #2b2a2a);
+  height: 60px;
+
+}
+.title {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+  letter-spacing: .2rem;
+  font-weight: 500;
+}
+.txt-1 {
+  color: crimson;
+}
+.txt-2 {
+  color: blanchedalmond;
+}
+.nav {
+  margin-left: auto;
+  margin-right: 10%;
+}
+.hdr {
+
+  margin-top: 60px;
+  height: 100px;
+
+}
+.col-md-8, .col-md-4, .col-md-3 {
+  padding: 0;
+}
+.box-dark {
+  background: linear-gradient(blanchedalmond, #ecd6af, blanchedalmond);
+  color: #0c0905;
+  min-height: 160px;
+  margin: 0;
+  padding: 15px;
+  border-bottom: 1px solid #968686;
+  border-left: 1px solid #a79898;
+  border-right: 1px solid #b7a4a4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+img {
+  display: block;
+  width: 100%;
+}
+.box-gif {
+  height: 160px;
+  padding-left: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #131313;
+
+}
+.box-gif img {
+  line-height: 100%;
+  width: 200px;
+
+  margin: 0;
+}
+.box-hero {
+  height: 160px;
+  background: url("components/assets/img/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.jpg")no-repeat center center/cover;
 }
