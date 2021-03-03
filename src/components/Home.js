@@ -14,13 +14,13 @@ import PicHero from "../components/assets/img/mr-cup-fabien-barral-Mwuod2cm8g4-u
 
 const Home = ()=>{
     const dispatch = useDispatch()
-    // React.useEffect(() => {
-    //     dispatch(fetchNews())
-    //
-    // });
+    React.useEffect(() => {
+        dispatch(fetchNews())
+
+    });
 
     const news = useSelector(state =>
-        (state.newsFt.fetchedItems[0])
+        (state.newsFt.fetchedItems)
     )
     console.log(news)
 
@@ -44,7 +44,7 @@ const Home = ()=>{
 
                 </Col>
                 <Col md={6}>
-                    <button  onClick={() => dispatch(fetchNews())} className='btn-success btn'>Download News</button>
+                    <button  onClick={() => dispatch(fetchNews())} className='btn-danger btn'>Download News</button>
                     <div className="box-hero">
                     </div>
                 </Col>
@@ -52,34 +52,29 @@ const Home = ()=>{
                     <div className="box-gif">
                         <img src={Gif} alt="news"/>
                     </div>
-                    {/*<h1>{news}</h1>*/}
                 </Col>
             </Row>
 
-            <Row md={12} >
-                <Col md={3}>
-                    <div className="box-dark">
-                         {/*<h1>{news}</h1>*/}
-                        <CartNews title ={news.title}/>
+
+                <div >
+                    <div className="grid ">
+
+                        {news.map((el,i) =>{
+                            return (<CartNews key = {i}
+                                             title ={el.title}
+                                             content ={el.content}
+                                             description ={el.description}
+                                             src ={el.imageUrl}
+                                             pubDate ={el.pubDate}
+
+                            />)
+                        })}
 
                     </div>
-                </Col>
-                <Col md={3}>
-                    <div className="box-dark">
-                        <CartNews/>
-                    </div>
-                </Col>
-                <Col md={3}>
-                    <div className="box-dark">
-                        <CartNews/>
-                    </div>
-                </Col>
-                <Col md={3}>
-                    <div className="box-dark">
-                        <CartNews/>
-                    </div>
-                </Col>
-            </Row>
+                </div>
+
+
+
 
 
         </div>

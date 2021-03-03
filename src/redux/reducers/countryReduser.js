@@ -1,7 +1,15 @@
 import {GET_BY_COUNTRY,GET_BY_LANG} from "../actions/const";
 
 const initialState = {
-    fetchedItems : [{title: ''}]
+    fetchedItems : [{ title : '',
+        imageUrl : '',
+        description: '',
+        content: '',
+        pubDate: '',
+        url : '',
+        country: "",
+        language: ''
+    }]
 
 
 }
