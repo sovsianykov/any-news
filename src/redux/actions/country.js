@@ -1,20 +1,37 @@
-import axios from 'axios'
+import axios from "axios";
 import {GET_BY_COUNTRY} from './const'
 
 
+export function fetchNews( ) {
+    return  async dispatch =>
+    {
+            let titles = []
+         await fetch('http://api.datanews.io/v1/headlines?country=ua&apiKey=0d45wukww0ucqyj6gppmertax')
+            .then(response => response.json())
+            .then(response => response.hits.map((el,i) => {
+                return titles[i] = {
+                    title : el.title,
+                    imageUrl : el.imageUrl,
+                    description: el.description,
+                    content: el.content,
+                    pubDate: el.pubDate
+                }
+            }))
 
 
 
-export const fetchNews = () => (dispatch) => {
 
-    axios.get(' https://gnews.io/api/v4/search/?q=jazz&token=c32ec108591e59471e57135a1da11764&lang=ru&music&country=ua').then(({data}) => {
-        dispatch(setCountry(data));
-    });
+        dispatch({type: GET_BY_COUNTRY, payload : titles})
+        // console.log(titles)
+
+
+    }
 }
 
 
-export  const setCoutry = (items) => ({
-    type: GET_BY_COUNTRY,
-    payload: items
-});
+
+
+
+
+
 
