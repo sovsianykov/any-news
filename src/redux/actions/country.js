@@ -9,7 +9,7 @@ export function fetchNews(topicSelected ,querySelected) {
     {
             if (querySelected === undefined) {querySelected = ''}
             let titles = []
-            let url = 'http://api.datanews.io/v1/headlines?country=ua&size=25&apiKey=0d45wukww0ucqyj6gppmertax'+'&topic='+topicSelected +
+            let url = 'http://api.datanews.io/v1/headlines?size=25&apiKey=0d45wukww0ucqyj6gppmertax'+'&topic='+topicSelected +
                 '&q='+ querySelected
         console.log(url)
          await fetch(url)

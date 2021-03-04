@@ -1,5 +1,5 @@
 import React from "react";
-import {Row,Col,FormControl,Form,Button} from "react-bootstrap";
+import {Row, Col, FormControl, Form, Button, Card} from "react-bootstrap";
 import CartNews from "./CartNews";
 import Gif from "../components/assets/img/news.gif";
 import { useSelector, useDispatch }  from 'react-redux';
@@ -10,6 +10,7 @@ import store  from '../redux/store'
 
 
 import PicHero from "../components/assets/img/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.jpg";
+import News from "./News";
 
 
 const Home = ()=>{
@@ -39,6 +40,10 @@ const Home = ()=>{
         (state.newsFt.fetchedItems)
     )
     console.log(news)
+    function newsHolderHandler() {
+        const newsHold = document.querySelector('.newsHolder')
+        newsHold.classList.toggle('ishidden')
+    }
 
 
 
@@ -94,6 +99,11 @@ const Home = ()=>{
 
 
                 <div >
+                    <div className="middle">
+
+                    </div>
+                    <div className="newsHolder">
+                    </div>
                     <div className="grid ">
 
                         {news.map((el,i) =>{
@@ -103,11 +113,12 @@ const Home = ()=>{
                                              description ={el.description}
                                              src ={el.imageUrl}
                                              pubDate ={el.pubDate}
-
+                                             onClick = {newsHolderHandler}
                             />)
                         })}
 
                     </div>
+
                 </div>
 
 
