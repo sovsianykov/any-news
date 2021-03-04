@@ -91,7 +91,7 @@ img {
   grid-template-columns:  1fr  1fr 1fr 1fr;
   .box-dark.gridItem, .box-dark {
     background: linear-gradient(#111111, #545252, #151413);
-    color: blanchedalmond;
+    color: #ffebcd;
     min-height: 160px;
     margin: 0;
     padding: 15px;
@@ -112,9 +112,9 @@ img {
 }
 .box-darker {
   background: linear-gradient(#242222, #646363, #24211f);
-  color: blanchedalmond;
+  color: #f8eede;
   width: 100%;
-  min-height: 160px;
+  height: 160px;
   margin: 0;
   padding: 15px;
   border-bottom: 1px solid #968686;
