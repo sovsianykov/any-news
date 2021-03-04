@@ -50,10 +50,23 @@ img {
   display: block;
   width: 100%;
 }
+.frm  {
+  height: 160px;
+  //padding-left: 10px;
+  width: 30%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
 .box-gif {
   height: 160px;
-  padding-left: 10px;
+  //padding-left: 10px;
+  width: 30%;
   overflow: hidden;
+  flex-direction: column;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,20 +74,23 @@ img {
 
 }
 .box-gif img {
+  display: block;
   line-height: 100%;
-  width: 200px;
+  width: 50%;
 
   margin: 0;
 }
 .box-hero {
   height: 160px;
+  width: 40%;
+  margin: 0 auto;
   background: url("components/assets/img/mr-cup-fabien-barral-Mwuod2cm8g4-unsplash.jpg")no-repeat center center/cover;
 }
 .grid {
   display: grid;
   grid-template-columns:  1fr  1fr 1fr 1fr;
   .box-dark.gridItem, .box-dark {
-    background: linear-gradient(#242222, #646363, #24211f);
+    background: linear-gradient(#111111, #545252, #151413);
     color: blanchedalmond;
     min-height: 160px;
     margin: 0;
@@ -92,5 +108,20 @@ img {
       margin-bottom: 10px;
     }
   }
+
+}
+.box-darker {
+  background: linear-gradient(#242222, #646363, #24211f);
+  color: blanchedalmond;
+  width: 100%;
+  min-height: 160px;
+  margin: 0;
+  padding: 15px;
+  border-bottom: 1px solid #968686;
+  border-left: 1px solid #a79898;
+  border-right: 1px solid #b7a4a4;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 
 }

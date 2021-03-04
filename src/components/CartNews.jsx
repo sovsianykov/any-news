@@ -11,13 +11,14 @@ const CardNews =({title,description,src, pubDate,content,url}) => {
                         <Card.Img className='cardImg' variant="top" src={src} />
                     </div>
                     <Card.Title>{title}</Card.Title>
-                    <Card.Title>{pubDate}</Card.Title>
                     <Card.Text>
                         {description}
                     </Card.Text>
+                    <Card.Title>{pubDate}</Card.Title>
                     <Button variant="outline-light" >
-                        <a href={url}>источник</a>
+                        <a href={url}>read more</a>
                     </Button>
+
                 </Card.Body>
             </Card>
         </div>

@@ -14,46 +14,83 @@ import PicHero from "../components/assets/img/mr-cup-fabien-barral-Mwuod2cm8g4-u
 
 const Home = ()=>{
     const dispatch = useDispatch()
+
+
+
+ const selectors = document.querySelectorAll('select')
+ const inputs = document.querySelectorAll('input')
+    let topicSelected = 'general'
+    let querySelected =``
+    function onQueryHandler()  {
+       querySelected = inputs[0].value
+        console.log(querySelected)
+        dispatch(fetchNews(topicSelected,querySelected))
+    }
+  function onSelectHandler()  {
+          topicSelected = selectors[0].value
+         console.log(topicSelected)
+      dispatch(fetchNews(topicSelected))
+     }
     React.useEffect(() => {
-        dispatch(fetchNews())
+        dispatch(fetchNews(topicSelected,querySelected))
 
-    });
-
+    },[dispatch]);
     const news = useSelector(state =>
         (state.newsFt.fetchedItems)
     )
     console.log(news)
 
 
+
     return  (
-        <div className='hdr container-fluid' >
+        <div className='hdr container-fluid  ' >
 
-            <Row md={12} >
-                <Col md={3}>
-                    <div className="box-dark">
-                        <Form>
-                            <Form.Group controlId="FormText">
-                                <Form.Label>SEARCH</Form.Label>
-                                <Form.Control type="text" placeholder="query" />
-                            </Form.Group>
-                            <Button  variant="outline-light" type="submit">
-                                Submit
-                            </Button>
-                        </Form>
-                    </div>
+            <div  className='box-darker' >
+                <div className='frm' >
+                    <Form className='form' id='topic'>
+                        <Form.Group   controlId="select">
+                            <Form.Label> Topic</Form.Label>
+                            <Form.Control  as="select" custom>
+                                <option id='general'>general</option>
+                                <option id='business'>business</option>
+                                <option  id='tech'>tech</option>
+                                <option  id='entertainment'>entertainment</option>
+                                <option   id='sports'>sports</option>
+                                <option   id='health'> health</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Button  variant="outline-light"  onClick={onSelectHandler} >
+                            SET
+                        </Button>
+                    </Form>
+                    <Form className='form'>
 
-                </Col>
-                <Col md={6}>
-                    <button  onClick={() => dispatch(fetchNews())} className='btn-danger btn'>Download News</button>
+
+                        <Form.Group controlId="formBasicPassword">
+                            <Form.Label>Search News By Query</Form.Label>
+                            <Form.Control type="text" placeholder="your query" defaultValue = ' '   />
+                        </Form.Group>
+                        <Button variant="outline-light" onClick={onQueryHandler}>
+                            GET NEWS
+                        </Button>
+                    </Form>
+                </div>
+
+
+
+
+                    {/*<button  onClick={() => dispatch(fetchNews())} className='btn-danger btn'>Download News</button>*/}
                     <div className="box-hero">
                     </div>
-                </Col>
-                <Col md={3}>
+
+
                     <div className="box-gif">
                         <img src={Gif} alt="news"/>
                     </div>
-                </Col>
-            </Row>
+
+
+
+            </div>
 
 
                 <div >

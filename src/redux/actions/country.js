@@ -2,11 +2,17 @@ import axios from "axios";
 import {GET_BY_COUNTRY} from './const'
 
 
-export function fetchNews( ) {
+
+
+export function fetchNews(topicSelected ,querySelected) {
     return  async dispatch =>
     {
+            if (querySelected === undefined) {querySelected = ''}
             let titles = []
-         await fetch('http://api.datanews.io/v1/headlines?country=ua&apiKey=0d45wukww0ucqyj6gppmertax')
+            let url = 'http://api.datanews.io/v1/headlines?country=ua&size=25&apiKey=0d45wukww0ucqyj6gppmertax'+'&topic='+topicSelected +
+                '&q='+ querySelected
+        console.log(url)
+         await fetch(url)
             .then(response => response.json())
             .then(response => response.hits.map((el,i) => {
                 return titles[i] = {
@@ -14,7 +20,8 @@ export function fetchNews( ) {
                     imageUrl : el.imageUrl,
                     description: el.description,
                     content: el.content,
-                    pubDate: el.pubDate
+                    pubDate: el.pubDate,
+                    url: el.url
                 }
             }))
 
