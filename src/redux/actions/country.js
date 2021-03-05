@@ -1,5 +1,5 @@
 import axios from "axios";
-import {GET_BY_COUNTRY} from './const'
+import {GET_BY_COUNTRY,SHOW_CONTENT} from './const'
 
 
 
@@ -29,7 +29,7 @@ export function fetchNews(topicSelected ,querySelected) {
 
 
         dispatch({type: GET_BY_COUNTRY, payload : titles})
-        // console.log(titles)
+
 
 
     }

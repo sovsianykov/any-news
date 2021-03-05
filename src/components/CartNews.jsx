@@ -4,7 +4,7 @@ import {Card,Button} from "react-bootstrap";
 import pic from './assets/img/markus-winkler-aB4BJSZoTTI-unsplash.jpg'
 import News from "./News";
 
-const CardNews =({title,description,src, pubDate,content,url,onClick}) => {
+const CardNews =({title,description,src, pubDate,content,url,onClick,id}) => {
 
 
 
@@ -21,10 +21,12 @@ const CardNews =({title,description,src, pubDate,content,url,onClick}) => {
                     </Card.Text>
                     <Card.Title>{pubDate}</Card.Title>
                     <Button variant="outline-light" onClick={onClick} >
-                        read more
+                        read more {id}
                     </Button>
                     <div className="newsHolder">
-                        {content}
+                        <News id ={id}
+                              key ={id}
+                        />
                     </div>
                 </Card.Body>
 

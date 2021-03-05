@@ -2,10 +2,26 @@ import React from "react";
 import {Modal} from "react-bootstrap";
 
 import {Button} from "react-bootstrap";
+import {useDispatch,useSelector} from "react-redux";
 
 
 
-function News({content,children}) {
+
+function News(id) {
+    const dispatch =useDispatch()
+    const news = useSelector(state =>
+        (state.newsFt.fetchedItems))
+
+     function showNews(news) {
+        news.forEach((el,i) => {
+            if (news.showcontent) {
+                let content = el.content
+                return content
+            }
+        })
+     }
+    let content = showNews(news)
+     console.log(id.id)
     return (
         <>
             <Modal.Dialog>
@@ -14,7 +30,7 @@ function News({content,children}) {
                 </Modal.Header>
 
                 <Modal.Body>
-                    <p>{content}</p>
+                    <p>{news[id.id].content}</p>
                 </Modal.Body>
 
                 <Modal.Footer>

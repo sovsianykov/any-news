@@ -102,12 +102,13 @@ const Home = ()=>{
                     <div className="middle">
 
                     </div>
-                    <div className="newsHolder">
-                    </div>
+                    {/*<div className="newsHolder">*/}
+                    {/*</div>*/}
                     <div className="grid ">
 
                         {news.map((el,i) =>{
                             return (<CartNews key = {i}
+                                              id  = {i}
                                              title ={el.title}
                                              content ={el.content}
                                              description ={el.description}
